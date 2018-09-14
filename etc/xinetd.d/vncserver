@@ -1,0 +1,15 @@
+service vncserver
+{
+  flags = IPv4
+  disable = no
+  socket_type = stream
+  protocol = tcp
+  group = tty
+  wait = no
+  user = nobody
+  per_source = 100
+  instances = UNLIMITED
+  server = /usr/bin/Xvnc
+  server_args = -inetd -query localhost -geometry 1366x768 -depth 24 -once -SecurityTypes=none
+}
+ 
